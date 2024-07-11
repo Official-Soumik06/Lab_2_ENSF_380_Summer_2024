@@ -33,7 +33,7 @@ public class CareProfile {
 	public MedicationList getMedicationList() {
 		return this.medicationList;
 	}
-	public Pet getPet(Pet pet) {
+	public Pet getPet() {
 		return this.pet;
 	}
 	
