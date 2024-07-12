@@ -79,17 +79,21 @@ public class Application {
 					String bookingID = scan.nextLine();
 
 					int i = 0;
+					int found = 0;
+
 					for (; i < counter; i++) {
 						if (bookings[i].getBookingID().equals(bookingID)) {
 							manageBooking(bookings[i]);
+							found++;
 							break;
 						}
 					}
-					if (i == 0) {
+					if (found == 0) {
 						System.out.println("Booking not found.");
 					}
 					continue;
 				case 3:
+					scan.nextLine();
 					System.out.println("Enter booking ID:");
 					bookingID = scan.nextLine();
 
@@ -112,9 +116,7 @@ public class Application {
 							break;
 						}
 					}
-					if (i == 0) {
-						System.out.println("Booking not found.");
-					}
+					
 					continue;
 				case 4:
 					System.out.println("Closing Program...");
