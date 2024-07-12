@@ -11,12 +11,13 @@ public class PrintCareProfile {
 
         // Print feeding instructions
         FeedingInformation feedingInstructions = careProfile.getFeedingInstructions();
-        System.out.println("Feeding Instructions: " + feedingInstructions.toString()); // Assuming FeedingInformation has a meaningful toString implementation
+        System.out.println("\nFeeding Instructions:\n" + feedingInstructions.getFoodName() + " - "
+        		+ feedingInstructions.getInstructions());
 
         // Print medication list
         MedicationList medicationList = careProfile.getMedicationList();
         String[] medNames = medicationList.getMedicationListNamesWithInstructions(); // Assuming this method exists and returns medication names with instructions
-        System.out.println("Medications:");
+        System.out.println("\nMedications:");
         for (String name : medNames) {
             System.out.println(name);
         }

@@ -9,7 +9,7 @@ public class FeedingInformation {
 		this.foodName = foodName;
 		this.instructions = instructions;
 	}
-	FeedingInformation() {}
+	
 	
 	//setters
 	public void setFoodName(String name) {
@@ -26,4 +26,6 @@ public class FeedingInformation {
 	public String getInstructions() {
 		return this.instructions;
 	}
+	
+	
 }
