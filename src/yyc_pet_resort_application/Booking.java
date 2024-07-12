@@ -15,13 +15,12 @@ public class Booking {
 	
 // This Is The Booking Class Other Constructor: 
 	
-	public Booking(String bookingID, String startDate, String endDate, Pet pet, Client client, BillingPayment[] payments) {
+	public Booking(String bookingID, String startDate, String endDate, Pet pet, Client client) {
 		this.bookingID = bookingID;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.pet = pet;
 		this.client = client;
-		this.payments = payments;
 	}
 	
 // Getter Public Member Functions/Methods: 

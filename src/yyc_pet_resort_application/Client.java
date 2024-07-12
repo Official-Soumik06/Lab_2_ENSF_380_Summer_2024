@@ -21,6 +21,8 @@ public class Client {
 		this.pets = pets;
 		this.bookings = bookings; 
 	}
+
+    Client() {}
 	
 // Getter Function/Methods: 
 	

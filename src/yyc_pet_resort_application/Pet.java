@@ -21,6 +21,7 @@ public class Pet {
 		this.careProfile = careProfile;
 		this.owner = owner; 
 	}
+	Pet() {}
 	
 	//Getter Public Member Functions/Methods:
 	
