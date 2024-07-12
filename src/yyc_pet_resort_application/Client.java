@@ -69,20 +69,89 @@ public class Client {
 	
 // Other Public Member Functions/Methods: 
 	
-	public void addPet(Pet pets) {
-		
-	}
-	
-	public void removePet(Pet pets) {
-		
-	}
-	
-	public void addBooking(Booking bookings) {
-		
-	}
-	
-	public void removeBooking(Booking bookings) {
-		
-	}
-	
+	public void addPet(Pet newPet) {
+        if (newPet == null) {
+            throw new IllegalArgumentException("Pet Cannot Be Nothing");
+        }
+        if (pets == null) {
+            pets = new Pet[1];
+            pets[0] = newPet;
+        } else {
+            Pet[] newPets = new Pet[pets.length + 1];
+            System.arraycopy(pets, 0, newPets, 0, pets.length);
+            newPets[pets.length] = newPet;
+            pets = newPets;
+        }
+    }
+
+    public void removePet(Pet petToRemove) {
+        if (petToRemove == null) {
+            throw new IllegalArgumentException("Pet To Remove Cannot Be Nothing");
+        }
+        if (pets == null || pets.length == 0) {
+            return; // If No Pets To Remove
+        }
+
+        int newLength = pets.length - 1;
+        Pet[] newPets = new Pet[newLength];
+        int index = 0;
+        boolean found = false;
+
+        for (Pet pet : pets) {
+            if (!pet.equals(petToRemove) || found) {
+                if (index < newLength) {
+                    newPets[index++] = pet;
+                }
+            } else {
+                found = true;
+            }
+        }
+
+        if (found) {
+            pets = newPets;
+        }
+    }
+
+    public void addBooking(Booking newBooking) {
+        if (newBooking == null) {
+            throw new IllegalArgumentException("Booking Cannot Be Nothing");
+        }
+        if (bookings == null) {
+            bookings = new Booking[1];
+            bookings[0] = newBooking;
+        } else {
+            Booking[] newBookings = new Booking[bookings.length + 1];
+            System.arraycopy(bookings, 0, newBookings, 0, bookings.length);
+            newBookings[bookings.length] = newBooking;
+            bookings = newBookings;
+        }
+    }
+
+    public void removeBooking(Booking bookingToRemove) {
+        if (bookingToRemove == null) {
+            throw new IllegalArgumentException("Booking To Remove Cannot Be Nothing");
+        }
+        if (bookings == null || bookings.length == 0) {
+            return; // If No Bookings To Remove
+        }
+
+        int newLength = bookings.length - 1;
+        Booking[] newBookings = new Booking[newLength];
+        int index = 0;
+        boolean found = false;
+
+        for (Booking booking : bookings) {
+            if (!booking.equals(bookingToRemove) || found) {
+                if (index < newLength) {
+                    newBookings[index++] = booking;
+                }
+            } else {
+                found = true;
+            }
+        }
+
+        if (found) {
+            bookings = newBookings;
+        }
+    }
 }
